@@ -1,1 +1,41 @@
-<p>register works!</p>
+
+
+<div class="box-login">
+    <div class="form-login">
+        <h2>Sign Up</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form" style="width: 100%;">
+            <p>
+                <mat-form-field class="example-full-width" style="width: 100%">
+                    <mat-label>Username</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="example-full-width" style="width: 100%;">
+                    <mat-label >Password</mat-label>
+                    <input matInput [type]="hide? 'password' : 'text' " formGroupName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="border: none;background:none;">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="example-full-width" style="width: 100%;">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </p>
+            <p  style="text-align: right; color:#03A9F4;margin-bottom:50px;cursor: pointer;">Forgot Password? </p>
+            <button class="submit btn btn-success">Sign up</button>
+            <h3>or sign in with</h3>
+            <a href="">
+                <span class="material-icons">
+                    facebook
+                </span>
+            </a>
+            <div style="border-top: 1px solid black; padding-top: 20px;text-align: right; font-size: 14px;">
+                <span>Not a member?  <a routerLink="/register">Sign Up</a></span>
+            </div>
+        </form>
+    </div>
+</div>
