@@ -1,0 +1,18 @@
+.title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.footer ul li {
+    list-style: none;
+}
+.footer ul {
+    padding : 0;
+}
+.footer ul li a {
+     text-decoration: none;
+     color: black;
+}
+.footer {
+ border-top: 3px solid #3686ff;
+ padding: 20px;
+}

@@ -1,5 +1,39 @@
-<div>
-    <p>Đây là login</p>
-    <h1>Chưa làm Form =)))</h1>
-  
+<div class="box-login">
+    <div class="form-login">
+        <h2>Đăng nhập hệ thống</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form" style="width: 100%;">
+            <p>
+                <mat-form-field class="example-full-width" style="width: 100%">
+                    <mat-label>Username</mat-label>
+                    <input matInput  formControlName="username" type="text">
+                    <mat-error *ngIf="f.username.errors">
+                        Username is required
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="example-full-width" style="width: 100%;">
+                    <mat-label >Password</mat-label>
+                    <input matInput [type]="hide? 'password' : 'text' " formControlName ="password" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" style="border: none;background:none;">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="f.password.errors">
+                            Passwords must be at least 8 characters
+                        </mat-error>
+                </mat-form-field>
+            </p>
+            <p  style="text-align: right; color:#03A9F4;margin-bottom:50px;cursor: pointer;">Quên mật khẩu? </p>
+            <button class="submit btn btn-success" (click)="onSubmit()">Đăng nhập</button>
+            <h3>hoặc đăng nhập với</h3>
+            <a href="javasctipt:void(0)">
+                <span class="material-icons">
+                    facebook
+                </span>
+            </a>
+            <div style="border-top: 1px solid black; padding-top: 20px;text-align: right; font-size: 14px;">
+                <span>chưa có tài khoản?  <a routerLink="/register">Đăng kí</a></span>
+            </div>
+        </form>
+    </div>
 </div>
