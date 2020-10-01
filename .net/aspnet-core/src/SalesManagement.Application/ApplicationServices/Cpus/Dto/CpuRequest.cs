@@ -16,6 +16,8 @@ namespace SalesManagement.ApplicationServices.Cpus.Dto
         public string Cache { get; set; }
         public string Tdp { get; set; }
         public string Description { get; set; }
+        public string ImageString { get; set; }
+
         public List<string> ImagePaths { get; set; }
         public List<IFormFile> Images { get; set; }
         public long Price { get; set; }

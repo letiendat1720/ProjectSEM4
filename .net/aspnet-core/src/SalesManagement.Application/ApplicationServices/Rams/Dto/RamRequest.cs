@@ -14,6 +14,8 @@ namespace SalesManagement.ApplicationServices.Rams.Dto
         public string Generation { get; set; }
         public string Bus { get; set; }
         public string Timing { get; set; }
+        public string ImageString { get; set; }
+
         public string Voltage { get; set; }
         public List<string> ImagePaths { get; set; }
         public List<IFormFile> Images { get; set; }
