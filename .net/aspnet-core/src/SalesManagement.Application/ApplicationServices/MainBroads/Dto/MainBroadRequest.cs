@@ -14,6 +14,8 @@ namespace SalesManagement.ApplicationServices.MainBroads.Dto
         public string Socket { get; set; }
         public string Ram { get; set; }
         public string SupRam { get; set; }
+        public string ImageString { get; set; }
+
         public List<string> ImagePaths { get; set; }
         public List<IFormFile> Images { get; set; }
         public string Description { get; set; }

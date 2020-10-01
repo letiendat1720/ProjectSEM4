@@ -12,6 +12,8 @@ namespace SalesManagement.ApplicationServices.Cases.Dto
         public long? Id { get; set; }
         public string Name { get; set; }
         public string MainBroad { get; set; }
+        public string ImageString { get; set; }
+
         public string Description { get; set; }
         public List<string> ImagePaths { get; set; }
         public List<IFormFile> Images { get; set; }

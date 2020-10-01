@@ -13,6 +13,8 @@ namespace SalesManagement.ApplicationServices.HardDiskDrives.Dto
         public string Type { get; set; }
         public string Color { get; set; }
         public string Storage { get; set; }
+        public string ImageString { get; set; }
+
         public string Size { get; set; }
         public List<string> ImagePaths { get; set; }
         public List<IFormFile> Images { get; set; }
