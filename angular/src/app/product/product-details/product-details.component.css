@@ -1,0 +1,99 @@
+.product,.chinh-sach,.des-product {
+    box-shadow: 0 5px 11px 0 rgb(225 229 232 / 28%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.price {
+    width: 100%;
+    display: inline-block;
+    margin: 0px;
+    font-size: 1.75rem;
+    color: rgb(20, 53, 195);
+    font-weight: bold;
+    border-bottom: 1px solid #ebebeb;
+}
+.order {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+}
+.doi-tra ul {
+    list-style: none;
+    padding: 0 !important;
+    font-size: 13px;
+    
+}
+.doi-tra p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.doi-tra ul li {
+    display: flex;
+    height: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.doi-tra .material-icons {
+    margin-right: 10px;
+    color: rgb(20, 53, 195);
+}
+.box-khuyen-mai >p {
+    font-weight: 500;
+}
+.box-khuyen-mai {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid rgb(20, 53, 195);
+}
+.buy-add  button{
+    width: 48%;
+    padding: 10px 0px;
+}
+.buy-add .btn-success {
+    background: rgb(20, 53, 195);
+    margin-right: 18px;
+    border: none;
+}
+.buy-add {
+    margin-top: 20px;
+}
+.buy-add .btn-warning {
+    background: #00bcd4;
+    border: none;
+}
+.item {
+    cursor: pointer;
+    transition: transform .2s;
+    margin: 20px 0;
+}
+.item:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  .cung-thuong-hieu {
+    box-shadow: 0 5px 11px 0 rgb(225 229 232 / 28%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .slick-prev::before {
+    content: "";
+    /* background: url(./assets/images/baseline_arrow_back_ios_black_18dp.png) no-repeat ; */
+    background-position: center;
+    color:#0010d4 !important;
+    font-size: 40px !important;
+    z-index: 100 !important;
+    
+}
+.slick-next::before {
+    content: "";
+    /* background: url(./assets/images/baseline_arrow_back_ios_black_18dp.png) no-repeat ; */
+    background-position: center;
+    color:#0010d4 !important;
+    font-size: 40px !important;
+    
+}

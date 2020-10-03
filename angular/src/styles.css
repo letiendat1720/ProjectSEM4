@@ -2,3 +2,32 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.slick-prev::before {
+    content: "";
+    /* background: url(./assets/images/baseline_arrow_back_ios_black_18dp.png) no-repeat ; */
+    background-position: center;
+    color:#0010d4 !important;
+    font-size: 40px !important;
+    z-index: 100 !important;
+    
+}
+.slick-next::before {
+    content: "";
+    /* background: url(./assets/images/baseline_arrow_back_ios_black_18dp.png) no-repeat ; */
+    background-position: center;
+    color:#0010d4 !important;
+    font-size: 40px !important;
+    
+}
+.slick-prev  {
+    left: 0 !important;
+    z-index: 100;
+}
+.slick-next  {
+    right: 20px !important;
+    z-index: 100;
+}
+button {
+    outline: none;
+}

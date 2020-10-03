@@ -9,7 +9,7 @@
                     <ul>
                         <li><a href="">
                                 <div class="img" style="width : 350px">
-                                    <img style="width : 100%" src="../../../assets/images/logo.png" alt="">
+                                    <img style="width : 100%" src="../../../assets/images/THIENAN1.png" alt="">
                                 </div>
                             </a></li>
                             <li><div >
@@ -21,8 +21,8 @@
                             </div>
                             </div> 
                             </li>
-                        <li><a routerLink="/cart"><span class="material-icons" style="text-align:center; width: 100%;font-size: 30px;">
-                            shopping_cart
+                        <li><a routerLink="/cart"><span class="material-icons" [matBadge]="cartService.count" matBadgeOverlap="false" style="text-align:center; width: 100%;font-size: 30px;">
+                            shopping_cart 
                             </span><br>Giỏ hàng</a></li>
                         <!-- <li><a href="javascript:void(0)">Laptop-máy tính<span
                                     class="glyphicon glyphicon-chevron-down iconsize"></span></a>
@@ -332,12 +332,12 @@
                                 </button>
                             </div>
                             <nav id="mobile-menu" class="mobile-menu collapse navbar-collapse">
-                                <ul class='menu nav navbar-nav'><li class="level0"><a class='' href=''><span>Trang chủ</span></a></li>
-    <li class="level0"><a class='' href='/gioi-thieu.html'><span>Giới thiệu</span></a></li>
-    <li class="level0"><a class='' href='/san-pham.html'><span>Sản phẩm</span></a></li>
-    <li class="level0"><a class='' href='/tin-tuc.html'><span>Tin tức</span></a></li>
-    <li class="level0"><a class='' href='/lien-he.html'><span>Liên hệ</span></a></li>
-    <li class="level0"><a class='' href='/content/chinh-sach-bao-mat.html'><span>Điểu khoản sử dụng</span></a></li>
+                                <ul class='menu nav navbar-nav'><li class="level0"><a href=''><span>Trang chủ</span></a></li>
+    <li class="level0"><a href='javascript:void(0)' routerLink=""><span>Giới thiệu</span></a></li>
+    <li class="level0"><a  routerLink=""><span>Sản phẩm</span></a></li>
+    <li class="level0"><a  routerLink="/tin-tuc"><span>Tin tức</span></a></li>
+    <li class="level0"><a  routerLink="/contact"><span>Liên hệ</span></a></li>
+    <li class="level0"><a ><span>Điểu khoản sử dụng</span></a></li>
     </ul>
                             </nav>
                         </nav>

@@ -6,7 +6,7 @@
         
         </div>
     </div>
-    <app-product [product] ="productList" (productAdded)="addProductToCart($event)"></app-product>
+    <app-product (productAdded)="addProductToCart($event)"></app-product>
 <!-- <div class="carr">
     <h2>car product</h2>
     <app-shopping-cart [product]="cartProductList" (productRemoved)="removeProduct($event)"></app-shopping-cart>

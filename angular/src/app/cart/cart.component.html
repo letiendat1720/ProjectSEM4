@@ -1,20 +1,26 @@
-<!-- <div *ngIf="product">
-    <div class=" col-md-3  item">
-        <div class=" box-item ">
-            <img src={{product.image}} alt="" >
-            <div class="detail">
-                <p>{{product.name}}</p>
-                <p style="color: red;">{{product.price}}</p>
-                <p style="text-decoration: line-through;">{{[product.priceSale]}}</p>
+<div *ngIf="!totalPrice">
+    <div class="container">
+        <div class="row">
+         
+            <div class="box">
+                <div class="img">
+                        <img src="../../assets/images/cart.png" alt="">
+                    </div>
+                <p>Giỏ hàng chưa có sản phẩm nào</p>
+                    <button class="btn btn-success" routerLink="">
+                        Mua sản phẩm
+                    </button>
             </div>
+            
         </div>
     </div>
-</div> -->
-<div class="container">
+</div>
+<div class="container" *ngIf="totalPrice">
     <div class="row">
-       <div class="col-md-12">
+       <div class="col-md-12" style="padding:20px">
         <div class="col-md-4">
-        <h2>Giỏ hàng của bạn(1 sản phẩm)</h2>
+            <h2>Bạn đang {{this.status}}</h2>
+        <h2>Giỏ hàng của bạn({{cartItems.length}} sản phẩm)</h2>
         </div>
         <div class="col-md-4">
                 
@@ -22,72 +28,39 @@
     </div>
         <div class="col-md-8">
             <div class="list-product-cart">
-               <div class="item-cart">
+               <div class="item-cart" *ngFor="let item of cartItems">
                  <div class="row">
                     <div class="col-md-2">
                         <div class="box-image" style="width: 100%;">
-                            <img style="width: 100%;" src="https://lh3.googleusercontent.com/fYPstb4AIBupZDKSPgq30Onap3fXgI_A5Ic_IURn_JrXUP5uKWnTyGj2BQekJNsvjXE9_cKfbptcajphCjPV=w500-rw" alt="">
+                            <img style="width: 100%;" [src]="item.imageString" alt="">
                         </div>          
                     </div>
                     <div class="col-md-5">
                         <div class="des">
-                            <p>Laptop Dell Inspiron 15 3593-70211826 Laptop Dell Inspiron 15 3593-70211826Laptop Dell Inspiron 15 3593-70211826</p>
+                            <p>{{item.name}}</p>
                                   
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="buttons_added">
-                            <input class="minus is-form" type="button" value="-">
-                            <input aria-label="quantity" class="input-qty" max="40" min="0" name="" type="number" value="1">
-                            <input class="plus is-form" type="button" value="+">
+                            <input class="minus is-form" type="button" value="-" (click)="remove()">
+                            <input aria-label="quantity" class="input-qty" max="40" min="0" name="" type="number" [value]="countProduct">
+                            <input class="plus is-form" type="button" value="+" (click)="add()">
                           </div>
                     </div>
                     <div class="col-md-3" style="text-align: right;">
                         <div class="price">
-                            <span style="font-size: 18px;color: #3686ff; font-weight: 500;">{{2000000 | currency:'VND'}}</span>
-                            <p style="text-decoration: line-through;">{{3300000 | currency:'VND'}}</p>
+                            <span style="font-size: 18px;color: #3686ff; font-weight: 500;">{{ item?.priceSale | currency:'VND'}}</span>
+                            <p style="text-decoration: line-through;">{{item?.price | currency:'VND'}}</p>
                             
                         </div>
                     </div>
            
                 </div>
-                <span class="material-icons delete-item">
+                <span class="material-icons delete-item" (click)="deleteItem(item)">
                     clear
                     </span> 
-               </div>
-               <div class="item-cart">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="box-image" style="width: 100%;">
-                            <img style="width: 100%;" src="https://lh3.googleusercontent.com/fYPstb4AIBupZDKSPgq30Onap3fXgI_A5Ic_IURn_JrXUP5uKWnTyGj2BQekJNsvjXE9_cKfbptcajphCjPV=w500-rw" alt="">
-                        </div>          
-                    </div>
-                    <div class="col-md-5">
-                        <div class="des">
-                            <p>Laptop Dell Inspiron 15 3593-70211826 Laptop Dell Inspiron 15 3593-70211826Laptop Dell Inspiron 15 3593-70211826</p>
-                                  
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="buttons_added">
-                            <input class="minus is-form" type="button" value="-">
-                            <input aria-label="quantity" class="input-qty" max="40" min="0" name="" type="number" value="1">
-                            <input class="plus is-form" type="button" value="+">
-                          </div>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <div class="price">
-                            <span style="font-size: 18px;color: #3686ff; font-weight: 500;">{{2000000 | currency:'VND'}}</span>
-                            <p style="text-decoration: line-through;">{{3300000 | currency:'VND'}}</p>
-                            
-                        </div>
-                    </div>
-          
-                </div>
-                <span class="material-icons delete-item">
-                    clear
-                    </span>  
-               </div>               
+               </div>             
             </div>
         </div>
         <div class="col-md-4">
@@ -98,7 +71,7 @@
                 <tbody>
                   <tr>
                     <th scope="row">Tạm tính</th>
-                    <td>{{2333232 |currency : 'VND'}}</td>
+                    <td>{{totalPrice |currency : 'VND'}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Phí vận chuyển</th>
@@ -110,7 +83,7 @@
                   </tr>
                   <tr>
                     <th scope="row">Thành tiền</th>
-                    <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{2332223 |currency: 'VND'}}</td>
+                    <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalPrice |currency: 'VND'}}</td>
                   </tr>
                 </tbody>
               </table>

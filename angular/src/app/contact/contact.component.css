@@ -1,0 +1,240 @@
+
+/*................ News ..............*/
+
+.blog-article-template {
+    width: 100%;
+    float: left;
+    padding: 30px 0;
+    font-family: "Roboto","HelveticaNeue","Helvetica Neue",sans-serif;
+}
+.blog-article-template a {
+  color: #000;
+  text-decoration: none;
+}
+.blog-article-template .module-header .title-head {
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.title-head {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+
+.artitle-item.item-large:not(:last-child) {
+    margin-bottom: 50px;
+}
+.artitle-item {
+    width: 100%;
+}
+.article-thumbnail {
+    width: 100%;
+}
+.artitle-item.item-large .article-thumbnail img {
+    width: 315px;
+    height: 215px;
+}
+.article-info {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+}
+.artitle-item.item-large .article-info a {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: normal;
+}
+.artitle-item h3 a {
+    color: #0d0d0d;
+    width: 100%;
+    float: left;
+}
+.artitle-item h3 a:hover {
+    color: #f23534;
+}
+.artitle-item.item-large .article-info .entry-date {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.artitle-item .entry-date {
+    font-size: 1em;
+    color: #c7c7c7;
+    width: 100%;
+    float: left;
+}
+.text3line {
+  margin-bottom: 12px;
+}
+.artitle-item.item-large .article-info .readmore a {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    color: #000;
+    background: #fff;
+    border: #dedede 1px solid;
+    padding: 12px 16px;
+    line-height: 10px;
+    float: left;
+    transition: all ease 0.3s;
+    border-radius: 0;
+}
+.artitle-item.item-large .article-info .readmore a:hover {
+  color: #f23534;
+  background: #fff;
+  padding: 12px 20px;
+  border: #f23534 1px solid;
+}
+
+.page-pagination .pagination li.active span {
+    color: #fff;
+    border-color: #333;
+    background: #333;
+    height: 34px;
+    width: 34px;
+    padding: 0;
+    line-height: 34px;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+.page-pagination .pagination li a {
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    color: #000;
+    border-color: #dedede;
+    border-radius: 0;
+    position: relative;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.page-pagination .pagination li a:hover {
+  color: #f23534;
+  border: 1px solid #f23534;
+}
+
+
+.aside-banner img {
+  width: 255px;
+  margin: 0px;
+}
+.aside-item {
+  font-size: 13px;
+  background: #f8f8f8;
+}
+
+.module-header{
+  margin-top: 20px;
+}
+.module-header .module-title.title-style-2 a, .module-header .module-title.title-style-2>span {
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px 10px 15px;
+}
+.module-header .module-title.title-style-2 a:hover {
+   color: #f23534;
+}
+.module-header .last {
+  font-size: 23px;
+    height: 23px;
+    width: 23px;
+    line-height: 23px;
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    border-radius: 0;
+    position: relative;
+    float: left;
+    padding: 10px 5px 5px 5px ;
+}
+.module-header .last:hover {
+   color: #f23534;
+}
+.aside-item.aside-articles .module-content .item {
+    width: 100%;
+    float: left;
+    padding: 15px 15px 10px 0;
+    background: #f8f8f8;
+}
+.artitle-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+.item {
+  margin-bottom: 20px;
+  border-top: 1px solid #f23534;
+}
+.item a {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.img-small {
+  width: 100px;
+  padding-left: 10px;
+}
+/*...............End News ...............*/
+
+/*...............Contact ...............*/
+
+.page-contact {
+    width: 100%;
+    float: left;
+    padding: 30px 0;
+    font-size: 13px;
+    font-family: "Roboto","HelveticaNeue","Helvetica Neue",sans-serif;
+}
+
+.page-contact a {
+  color: #000;
+  text-decoration: none;
+}
+.page-contact .module-header .title-head {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+.page-contact button:hover {
+  color: #f23534;
+  border: 1px solid #f23534;
+  background: #fff;
+}
+.page-contact h2 {
+  font-size: 22px;
+}
+.page-contact .list-info {
+  background: #f8f8f8;
+  border-radius: .25rem;
+}
+.page-contact .module-header .module-title {
+    padding: 10px 15px;
+    margin: 0;
+    font-weight: 700;
+}
+.list-info-item {
+    display: block; padding: .75rem 1.25rem;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.list-info-item-last {
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #f8f8f8;
+}
+.list-info-item a span, .list-info-item-last a span {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+/*...............End Contact ...............*/
