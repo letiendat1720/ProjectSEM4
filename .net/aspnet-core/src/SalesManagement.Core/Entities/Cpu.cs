@@ -10,6 +10,7 @@ namespace SalesManagement.Entities
         public string Core { get; set; }
         public string Cache { get; set; }
         public string Tdp { get; set; }
+
         public string Description { get; set; }
         public string ImageString { get; set; }
         public long Price { get; set; }

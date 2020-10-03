@@ -1,8 +1,8 @@
 import { Component, OnInit, Injector, Output, Input, EventEmitter } from '@angular/core';
-// import Swiper styles
 import 'swiper/swiper-bundle.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
-// configure Swiper to use modules
+import {} from '../service/cart.service';
+import {CartService} from '../service/cart.service';
 Swiper.use([Navigation, Pagination]);
 @Component({
   selector: 'app-home',
@@ -16,10 +16,10 @@ export class HomeComponent implements OnInit  {
   @Input() productList = [
     {
       name : 'Laptop Dell Inspiron 15 3593-70211826',
-      id : 2332,
+      id : 4,
       price : 2000000,
       priceSale : 1300000,
-      image : 'https://lh3.googleusercontent.com/fYPstb4AIBupZDKSPgq30Onap3fXgI_A5Ic_IURn_JrXUP5uKWnTyGj2BQekJNsvjXE9_cKfbptcajphCjPV=w500-rw'
+      image : 'https://lh3.googleusercontent.com/dD0TFbykM-_cF1uT8hNWKU-tim92I4X3qLfPGs44uXzrIF5YjYP44svqNkSptkUajHh4aZThMGLKax6hEJo=w500-rw'
     },
     {
       name : 'Laptop Dell Inspiron 3593-70197457',
@@ -70,13 +70,14 @@ export class HomeComponent implements OnInit  {
 
     },
   ];
-  
+countProdcuctCar= 0;
   addProductToCart(data: any) {
     this.cartProductList.push(data);
+    this.countProdcuctCar += 1;
     console.log(this.cartProductList);
     
   }
-  constructor() {
+  constructor(public cartService: CartService) {
   }
   ngOnInit(): void {
   }

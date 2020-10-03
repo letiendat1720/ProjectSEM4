@@ -222,7 +222,7 @@
  
 }
 .product-left .title {
-  background:  #3686ff;
+  background:  #0010d4;
 }
 .product-left .contact {
   background-color: #f6f6f6;
@@ -250,6 +250,10 @@
 .des > p {
   font-size: 12px;
   font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .des {
   background: #ebebeb;
@@ -262,6 +266,7 @@
   text-align: center;
 }
 .box-item1 {
+  cursor: pointer;
   background: #fff;
 }
 .detail p {
@@ -301,4 +306,25 @@ transition: transform .2s;
 }
 .slider-top  {
   margin-top: 20px;
+}
+.nav-btn {
+  height: 47px;
+  position: absolute;
+  width: 26px;
+  cursor: pointer;
+  top: 100px !important;
+}
+
+.prev-slide.slick-disabled,
+.next-slide.slick-disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.prev-slide:hover {
+  background-position: 0px -53px;
+}
+
+.next-slide:hover {
+  background-position: -24px -53px;
 }

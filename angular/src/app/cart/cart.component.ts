@@ -1,40 +1,58 @@
 import { Component, OnInit, Injector, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { timers } from 'jquery';
+import { CartService } from '../service/cart.service';
+import {ConnectionService} from 'ng-connection-service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  constructor(public cartService: CartService, public connectService: ConnectionService) {
+  }
+
   @Input() product: any;
   @Output() productRemoved = new EventEmitter();
-  modelChanged(product) {
-     if (this.product.num === 0) {
-      this.productRemoved.emit(this.product)
-     }
-  }
-  constructor() {
-   }
-
-  ngOnInit(): void {
-    console.log(this.product);
-    $('input.input-qty').each(function() {
-  // tslint:disable-next-line: one-variable-per-declaration
-  let $this = $(this),
-    qty = $this.parent().find('.is-form'),
-    min = Number($this.attr('min')),
-    max = Number($this.attr('max'))
-  if (min == 0) {
-    var d = 0;
-  } else d = min
-  $(qty).on('click', function() {
-    if ($(this).hasClass('minus')) {
-      if (d > min) d += -1
-    } else if ($(this).hasClass('plus')) {
-      var x = Number($this.val()) + 1
-      if (x <= max) d += 1
+  cartItems;
+  countProduct = 1;
+  totalPrice = 0;
+  status = 'ONLINE';
+  isConnected = true;
+  // tslint:disable-next-line: typedef
+  cartItem() {
+    const data = localStorage.getItem('listItemAddToCart');
+    this.cartItems = JSON.parse(data);
+    if(this.cartItems){
+      this.cartItems.map(data => {
+        this.totalPrice = this.totalPrice + data.productConfiguration.price;
+      })
     }
-    $this.attr('value', d).val(d)
-  })
-})
   }
+  // tslint:disable-next-line: typedef
+  deleteItem(item) {
+    this.totalPrice = this.totalPrice - item.productConfiguration.price;
+    const data = this.cartItems.filter(data => data.id !== item.id);
+    const dataRemove = this.cartItems.filter(data => data.id === item.id);
+    const countProduct = localStorage.getItem('dataCount');
+    // tslint:disable-next-line: radix
+    const productCurrent = parseInt(countProduct) - dataRemove.length;
+    localStorage.setItem('dataCount', JSON.stringify(productCurrent));
+    this.cartItems = data;
+    localStorage.setItem('listItemAddToCart', JSON.stringify(this.cartItems));
+    this.cartService.count = localStorage.getItem('dataCount');
+    if(this.cartService.count == 0) {
+      localStorage.clear();
+    }
+  }
+  ngOnInit(): void {
+    this.cartItem();
+}
+add() {
+  this.countProduct++;
+}
+remove() {
+    if(this.countProduct >= 2){
+      this.countProduct--;
+    }
+}
 }

@@ -1050,6 +1050,9 @@ namespace SalesManagement.Migrations
                     Ram = table.Column<string>(nullable: true),
                     Graphic = table.Column<string>(nullable: true),
                     Storage = table.Column<string>(nullable: true),
+                    TradeMark = table.Column<string>(nullable: true),
+                    Price = table.Column<long>(nullable:true),
+                    PriceSale = table.Column<long>(nullable: true),
                     Pin = table.Column<string>(nullable: true),
                     Mass = table.Column<string>(nullable: true),
                     Operating = table.Column<string>(nullable: true),
@@ -1067,7 +1070,7 @@ namespace SalesManagement.Migrations
                         principalTable: "ProductConfigurations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
+                });;
 
             migrationBuilder.CreateTable(
                 name: "AbpEntityDynamicParameterValues",

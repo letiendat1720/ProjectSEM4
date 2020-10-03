@@ -1935,6 +1935,14 @@ namespace SalesManagement.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+                    b.Property<long>("Price")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("PriceSale")
+                      .HasColumnType("bigint");
+
+                    b.Property<string>("TradeMark")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Operating")
                         .HasColumnType("nvarchar(max)");

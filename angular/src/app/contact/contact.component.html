@@ -1,0 +1,87 @@
+    <div class="container">
+        <div class="row">
+            <div class="list-info col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        Thông tin
+                    </h2>
+                </div>
+                <div class="module-content">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-info-item">
+                            <a href="#">
+                                <i class="fa fa-phone"></i>
+                                <span>Tổng đài miễn phí</span>
+                                <div>Tư vấn mua hàng: 1800 6867</div>
+                                <div>Chăm sóc khách hàng: 1800 6865</div>
+                            </a>
+                        </li>
+                        <li class="list-info-item">
+                            <a href="#">
+                                <i class="fa fa-envelope-o"></i>
+                                <span>Liên hệ báo giá</span>
+                                <div>Email: baogia@thienan.vn</div>
+                            </a>
+                        </li>
+                        <li class="list-info-item">
+                            <a href="#">
+                                <i class="fa fa-handshake-o"></i>
+                                <span>Hợp tác phát triển</span>
+                                <div>Email: hoptac@thienan.vn</div>
+                            </a>
+                        </li>
+
+                        <li class="list-info-item-last">
+                            <a href="#">
+                                <i class="fa fa-map-marker"></i>
+                                <span>Địa chỉ</span>
+                                <div>Số 8, Tôn Thất Thuyết, Nam Từ Liêm, Hà Nội</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="module-header">
+                    <h1 class="title-head">Liên hệ</h1>
+                </div>
+                <div class="module-content">
+                    <form accept-charset="utf-8" action="/contact" id="contact" method="post" 
+                        class="form-signup clearfix">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Tên: </label>
+                                    <input type="text" name="contact[name]" id="name"
+                                        class="form-control  form-control-lg" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Email: </label>
+                                    <input type="email" name="contact[email]" id="email"
+                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$"
+                                        class="form-control form-control-lg" required>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <fieldset class="form-group">
+                                    <label>Nội dung: </label>
+                                    <textarea name="contact[body]" id="comment" class="form-control form-control-lg"
+                                        rows="5" Required></textarea>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <button tyle="summit" class="btn btn-outline-dark margin-top-15 margin-bottom-30">Gửi
+                                    liên hệ</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

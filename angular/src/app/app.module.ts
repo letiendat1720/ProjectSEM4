@@ -20,6 +20,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ShoppingCartComponent } from './cart/shopping-cart/shopping-cart.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { NavigationComponent } from './share/navigation/navigation.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {SlickCarouselModule} from 'ngx-slick-carousel';
+import {MatBadgeModule} from '@angular/material/badge';
+import { BuildpcComponent } from './buildpc/buildpc.component';
+import { TinTucComponent } from './tin-tuc/tin-tuc.component';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +39,10 @@ import { NavigationComponent } from './share/navigation/navigation.component';
     ProductListComponent,
     ShoppingCartComponent,
     ProductDetailsComponent,
-    NavigationComponent
+    NavigationComponent,
+    BuildpcComponent,
+    TinTucComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -41,10 +50,14 @@ import { NavigationComponent } from './share/navigation/navigation.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
+    SlickCarouselModule,
+    MatBadgeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
