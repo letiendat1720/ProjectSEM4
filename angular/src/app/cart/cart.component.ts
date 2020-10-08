@@ -22,6 +22,8 @@ export class CartComponent implements OnInit {
   cartItem() {
     const data = localStorage.getItem('listItemAddToCart');
     this.cartItems = JSON.parse(data);
+    console.log(this.cartItems);
+    
     if(this.cartItems){
       this.cartItems.map(data => {
         this.totalPrice = this.totalPrice + data.productConfiguration.price;

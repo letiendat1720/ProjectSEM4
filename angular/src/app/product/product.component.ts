@@ -31,8 +31,8 @@ export class ProductComponent implements OnInit {
   }
   // tslint:disable-next-line: member-ordering
   slides = [
-    {img: 'https://hanoicomputercdn.com/media/news/19_0828_banner_pcgm_tintuc.png'},
     {img: "https://genk.mediacdn.vn/2019/11/27/msibanner2019-1574849555204926741509.jpg"},
+    {img: 'https://hanoicomputercdn.com/media/news/19_0828_banner_pcgm_tintuc.png'},
     {img: "https://www.acervietnam.com.vn/Data/Sites/1/News/9047/vg271up-ed245-tang-cestus310_-resize-1600x900.jpg"},
   ];
   // tslint:disable-next-line: member-ordering
