@@ -1,13 +1,172 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <div class="item">
-                <div  class="name">
+        <div class=" col-md-8" style="padding: 20px;">
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2 item align-items-center justify-content-center" >
+                            <p>Ram</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="img" style="border: 1px solid #ebebeb;">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544" alt="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        
+                        </div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+                    </div>
                 </div>
-                <div class="box-img">
-                    <img src="../../assets/images/unnamed.jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2 item align-items-center justify-content-center" >
+                            <p>Ổ SSd</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="img" style="border: 1px solid #ebebeb;">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544" alt="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        
+                        </div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2 item align-items-center justify-content-center" >
+                            <p>Ổ HHD</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="img" style="border: 1px solid #ebebeb;">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ssd.svg?alt=media&token=e4be0398-ae2a-4735-b2aa-240c46039abe" alt="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        
+                        </div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2 item align-items-center justify-content-center" >
+                            <p>Card Màn hình</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="img" style="border: 1px solid #ebebeb;">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544" alt="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        
+                        </div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2  item align-items-center justify-content-center" >
+                            <p>VGA</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="img" style="border: 1px solid #ebebeb;">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/vga-card.svg?alt=media&token=9f112617-13ac-4016-aa3b-6f03d53a9f9a" alt="">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        
+                        </div>
+                        <div class="col-md-2 click"><button class="btn btn-success click" >chọn</button></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class=" col-md-4" style="padding : 20px;">
+            <div class="thanh-toan">
+                <h2>Thanh toán</h2>
+                <table class="table">
+                   
+                    <tbody>
+                      <tr>
+                        <th scope="row">Tạm tính</th>
+                        <td>{{totalPrice |currency : 'VND'}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Phí vận chuyển</th>
+                        <td>{{0 | currency:'VND'}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Khuyến mại</th>
+                        <td>{{0 | currency:'VND' }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Thành tiền</th>
+                        <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalPrice |currency: 'VND'}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="btn-thanh-toan_cart">
+                      <button class="btn btn-success">Thanh toán</button>
+                  </div>
+                </div>
+    
     </div>
-</div> 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Danh sách</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="list-product-cart">
+                    <div class="item-cart" *ngFor="let item of Ram">
+                      <div class="row">
+                         <div class="col-md-2">
+                             <div class="box-image" style="width: 100%;">
+                                 <!-- <img style="width: 100%;" [src]="item.imageString" alt=""> -->
+                             </div>          
+                         </div>
+                         <div class="col-md-5">
+                             <div class="des">
+                                 <p>{{item.name}}</p>
+                                       
+                             </div>
+                         </div>
+                         <div class="col-md-3" style="text-align: right;">
+                            <div class="price">
+                                <span style="font-size: 18px;color: #3686ff; font-weight: 500;">{{ item?.priceSale | currency:'VND'}}</span>
+                                <p style="text-decoration: line-through;">{{item?.price | currency:'VND'}}</p>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-2"><button class="btn btn-success ">chọn</button></div>
+                    
+                
+                     </div>
+                    </div>             
+                 </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+</div>
