@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tạo đơn hàng</title>
+
+    <!-- Custom fonts for this template -->
+    <link th:href="@{vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{css/sb-admin-2.min.css}" rel="stylesheet"/>
+
+    <!-- Custom styles for this page -->
+    <link th:href="@{vendor/datatables/dataTables.bootstrap4.min.css}" rel="stylesheet"/>
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+
+
+
+    <!-- Sidebar -->
+    <div th:replace="~{/layout :: header-left}"></div>
+    <!-- End of Sidebar -->
+
+
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+
+            <!-- Topbar -->
+            <div th:replace="~{/layout :: header-top}"></div>
+            <!-- End of Topbar -->
+
+
+
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h3 class="m-0 font-weight-bold text-primary">Tạo đơn hàng</h3>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/saveOrder}" method="post" th:object="${orders}">
+                            <div class="form-group row">
+                                <label th:for="requiredate" class="col-sm-2 col-form-label">Thời gian mua hàng</label>
+                                <div class="col-sm-10">
+                                    <input type="date" th:field="*{requiredate}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="placeorder" class="col-sm-2 col-form-label">Khách hàng</label>
+                                <div class="col-sm-10">
+                                    <input type="text" th:field="*{placeorder}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="email" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="text" th:field="*{email}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="phone" class="col-sm-2 col-form-label">Phone</label>
+                                <div class="col-sm-10">
+                                    <input type="number" th:field="*{phone}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="totalpay" class="col-sm-2 col-form-label">Tổng tiền</label>
+                                <div class="col-sm-10">
+                                    <input type="number" th:field="*{totalpay}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="description" class="col-sm-2 col-form-label">Mô tả</label>
+                                <div class="col-sm-10">
+                                    <input type="text" th:field="*{description}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="customername" class="col-sm-2 col-form-label">Nhân viên</label>
+                                <div class="col-sm-10">
+                                    <input type="text" th:field="*{customername}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="status" class="col-sm-2 col-form-label">Trạng thái</label>
+                                <div class="col-sm-10">
+                                    <input type="number" th:field="*{status}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label th:for="trandate" class="col-sm-2 col-form-label">Thời gian tạo đơn</label>
+                                <div class="col-sm-10">
+                                    <input type="date" th:field="*{trandate}" class="form-control">
+                                </div>
+                            </div>
+                            <input type="hidden" th:field="*{isdeleted}" class="form-control">
+                            <input type="submit" class="btn btn-primary" value="Save"/>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+
+
+        <!-- Footer -->
+
+        <!-- End of Footer -->
+
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<div th:replace="~{/layout :: logout}"></div>
+
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Core plugin JavaScript-->
+<script th:src="@{vendor/jquery-easing/jquery.easing.min.js}" ></script>
+
+<!-- Custom scripts for all pages-->
+<script th:src="@{js/sb-admin-2.min.js}"></script>
+
+<!-- Page level plugins -->
+<script th:src="@{vendor/datatables/jquery.dataTables.min.js}" ></script>
+<script th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}" ></script>
+
+<!-- Page level custom scripts -->
+<script th:src="@{js/demo/datatables-demo.js}" ></script>
+
+</body>
+
+</html>
+
+
