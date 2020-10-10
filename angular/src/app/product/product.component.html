@@ -2,15 +2,15 @@
     <div class="row">
         <div class="slider-top col-md-12">
             <div class="row">
-                 <div class="col-md-4">  
+                <!-- <div class="col-md-4">  
                         <div class="menu-cate menu-quick-select">
-                                <!-- <div class="menu-cate-title">
+                                <div class="menu-cate-title">
                                     <span class="material-icons">
                                         view_list
                                         </span>
                                         <span>Danh mục sản phẩm</span>
                                     <i class="fa fa-chevron-circle-down"></i>
-                                </div> -->
+                                </div>
                             <ul class="menu-cate-content">
                                     <li>
                                         <a href="/san-pham/may-anh-may-quay-phim-1130">
@@ -250,29 +250,28 @@
                                     </li>
                             </ul>
                         </div>
-                    </div>  
-                    <div class="col-md-8">
-                    <ngx-slick-carousel class="carousel" 
-                    #slickModal="slick-carousel" 
-                    [config]="slideConfig" 
-                    (init)="slickInit($event)"
-                    (breakpoint)="breakpoint($event)"
-                    (afterChange)="afterChange($event)"
-                    (beforeChange)="beforeChange($event)">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-          <img src="{{ slide.img }}" alt="" width="100%">
-    </div>
-   
-</ngx-slick-carousel>
+                    </div>   -->
+
+                <div class="col-md-8">
+                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+                        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                            <img src="{{ slide.img }}" alt="" width="100%">
+                        </div>
+
+                    </ngx-slick-carousel>
                 </div>
-                <!-- <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="item-banner">
-                        <img style="width : 100%;height: 100%;" src="https://promotions.newegg.com/FlagShip/ABS/img/banner_large.jpg" alt="">
+                        <img style="width : 100%;height: 100%;"
+                            src="https://promotions.newegg.com/FlagShip/ABS/img/banner_large.jpg" alt="">
+                    </div>
+                    <div class="item-banner">
+                        <img style="width : 100%;height: 100%;"
+                            src="https://www.fiercepc.co.uk/media/wysiwyg/PC-BUNDLE-BANNER.jpg" alt="">
+                    </div>
                 </div>
-                <div class="item-banner">
-                    <img style="width : 100%;height: 100%;" src="https://www.fiercepc.co.uk/media/wysiwyg/PC-BUNDLE-BANNER.jpg" alt="">
-            </div>
-            </div> -->
             </div>
         </div>
         <div class="col-md-12">
@@ -280,21 +279,22 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="box-image-banner">
-                                <img src="https://lh3.googleusercontent.com/-SN6Hr9dZG41RKMF7OUYEpOiQ_zVkGB_nfSB2ErTy4I4JvGroB2j6iLRxRrXGaVBkcCx08L-2l7QcKGDkk6G=w395-rw"
+                            <img src="https://lh3.googleusercontent.com/-SN6Hr9dZG41RKMF7OUYEpOiQ_zVkGB_nfSB2ErTy4I4JvGroB2j6iLRxRrXGaVBkcCx08L-2l7QcKGDkk6G=w395-rw"
                                 alt="">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="box-image-banner">
                             <img src="https://lh3.googleusercontent.com/ClkbY8L9xVFZ4bnfX5YP0cE6t2LW4YkISdpFL7lsOr8h2EC6Mw-13tob6_wHNRhKAdnIoV2yVjnuO-tpDw=w395-rw"
-                            alt="">
+                                alt="">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="box-image-banner">
-                            <img src="https://lh3.googleusercontent.com/ziDv0Uyfv8Uo_DzgKvgaZRaymj8oJ428F19xZGLwHLWD2VqXO2CO2USziIdYkfn50f6FQpsw8f_p8xq0dQ=w395-rw" alt="">
+                            <img src="https://lh3.googleusercontent.com/ziDv0Uyfv8Uo_DzgKvgaZRaymj8oJ428F19xZGLwHLWD2VqXO2CO2USziIdYkfn50f6FQpsw8f_p8xq0dQ=w395-rw"
+                                alt="">
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -346,10 +346,13 @@
                         <h2>Sản phẩm bán chạy</h2>
                     </div>
                     <div class="box-item1">
-                        <div class="item1"  *ngFor="let product of productList" [routerLink]="['/products',product.id]">
+                        <div class="item1" *ngFor="let product of productListSell"
+                            [routerLink]="['/products',product.id]">
                             <div class="box-image">
-                                <img *ngIf="product.imageString" src={{product.imageString}} alt="" style="width : 70px">
-                                <img *ngIf="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt="" style="width : 70px">
+                                <img *ngIf="product.imageString" src={{product.imageString}} alt=""
+                                    style="width : 70px">
+                                <img *ngIf="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt=""
+                                    style="width : 70px">
 
                             </div>
                             <div class="des">
@@ -377,15 +380,18 @@
                 <hr>
                 <div class="col-md-3 item" *ngFor="let product of productList">
                     <div class=" box-item " [routerLink]="['/products',product.id]">
-                        <img *ngIf ="product.imageString" src={{product.imageString}}  alt="" style="width : 100%">
-                        <img *ngIf ="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt="" style="width : 100%">
+                        <img *ngIf="product.imageString" src={{product.imageString}} alt="" style="width : 100%">
+                        <img *ngIf="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt=""
+                            style="width : 100%">
 
                         <div class="detail">
                             <p>{{product.name}}</p>
                             <div style="text-align: left;">
                                 <span
-                                style="color: #0010d4;font-weight: bold; margin-right: 10px;">{{product.priceSale | currency : "VND"}}</span> <br>
-                            <span style="text-decoration: line-through;color: #b0a4a4;font-size: 12px;">{{product.price | currency:"VND"}}</span>
+                                    style="color: #0010d4;font-weight: bold; margin-right: 10px;">{{product.priceSale | currency : "VND"}}</span>
+                                <br>
+                                <span
+                                    style="text-decoration: line-through;color: #b0a4a4;font-size: 12px;">{{product.price | currency:"VND"}}</span>
                             </div>
                         </div>
 
@@ -398,24 +404,25 @@
                     background: #0010d4;
                     color: #fff;
                     position: absolute;">Sản phẩm nổi bật</span></p>
-            </div>
-            <div class="col-md-3 item" *ngFor="let product of productList">
-                <div class=" box-item " [routerLink]="['/products',product.id]">
-                    <img *ngIf ="product.imageString" src={{product.imageString}}  alt="" style="width : 100%">
-                    <img *ngIf ="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt="" style="width : 100%">
-
-                    <div class="detail">
-                        <p>{{product.name}}</p>
-                        <span
-                            style="color: red;font-weight: bold; margin-right: 10px;">{{product.priceSale | currency : "VND"}}</span>
-                        <span style="text-decoration: line-through;">{{product.price | currency:"VND"}}</span>
-                    </div>
-
                 </div>
-                <!-- <button class="btn btn-success" (click)="addProductToCart(product)">thêm vào giỏ hàng</button> -->
-            </div>
+                <div class="col-md-3 item" *ngFor="let product of productList">
+                    <div class=" box-item " [routerLink]="['/products',product.id]">
+                        <img *ngIf="product.imageString" src={{product.imageString}} alt="" style="width : 100%">
+                        <img *ngIf="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt=""
+                            style="width : 100%">
+
+                        <div class="detail">
+                            <p>{{product.name}}</p>
+                            <span
+                                style="color: red;font-weight: bold; margin-right: 10px;">{{product.priceSale | currency : "VND"}}</span>
+                            <span style="text-decoration: line-through;">{{product.price | currency:"VND"}}</span>
+                        </div>
+
+                    </div>
+                    <!-- <button class="btn btn-success" (click)="addProductToCart(product)">thêm vào giỏ hàng</button> -->
+                </div>
             </div>
         </div>
-        
+
     </div>
 </div>

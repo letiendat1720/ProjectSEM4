@@ -10,8 +10,8 @@ namespace SalesManagement.Entities
         public string Ram { get; set; }
         public string Graphic { get; set; }
         public string Storage { get; set; }
-        public string Price { get; set; }
-        public string PriceSale { get; set; }
+        public long? Price { get; set; }
+        public long? PriceSale { get; set; }
         public string TradeMark { get; set; }
         public string Pin { get; set; }
         public string Mass { get; set; }

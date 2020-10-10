@@ -12,7 +12,7 @@
                         <h2>{{productDetail?.name}}</h2>
                     </div>
                     <div class="price">
-                        <h2>{{productDetail?.priceSale | currency: "VND"}}</h2>
+                        <h2 >{{productDetail?.priceSale | currency: "VND"}}</h2>
                     </div>
                     <div class="khuyen-mai">
                         <h2>Chọn thêm 1 trong những khuyến mãi sau</h2>
@@ -77,8 +77,8 @@
             <ngx-slick-carousel class="carousel" 
             #slickModal="slick-carousel" 
             [config]="slideConfig" >
-<div ngxSlickItem *ngFor="let product of productList" class="slide">
-    <div class="box-item " [routerLink]="['/products',product.id]">
+<div ngxSlickItem *ngFor="let product of productListAll" class="slide">
+    <div class="box-item " [routerLink]="['/products',product.id]" (click)="reload()">
         <img *ngIf ="product.imageString" src={{product.imageString}}  alt="" style="width : 100%">
         <img *ngIf ="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt="" style="width : 100%">
         <div class="detail">
@@ -96,18 +96,7 @@
             <div class="col-md-8">
                 <div class="des">
                     <h2>Mô tả sản phẩm</h2>
-                    <p> Màn hình LCD Dell 24.5'' AW2518H G-Sync 240Hz là một nhân tố đáp ứng sự phát triển của công nghệ
-                        ngày một nhanh, việc đòi hỏi một chiếc màn hình chuyên phục vụ cho nhu cầu chơi game ngày một
-                        tăng cao với những game thủ khó tính nói chung cũng như các game thủ e-Sport nói riêng. Nhiều
-                        người sẽ thắc mắc tại sao lại có nhiều người lại cần một chiếc màn hình sử dụng tấm nền TN, một
-                        công nghệ tấm nền khá là cũ trong công nghệ sản xuất màn hình, khi mà các công nghệ mới hơn như
-                        IPS, OLED đều cho khả năng hiển thị vượt trội hơn rất nhiều từ độ chính xác của màu sắc, độ
-                        tương phản cho tới góc nhìn. Tuy nhiên, có một thứ mà tấm nền TN đang sở hữu mà những công nghệ
-                        mới hơn chưa có được, đó chính là thời gian phản hồi cũng như độ trễ cực thấp, và điều này sẽ
-                        được chú trọng bởi các game thủ hơn là việc tái hiện màu sắc chân thực. Nhận thấy điều này, Dell
-                        đã cho ra mắt chiếc màn hình Alienware AW2518H với thời gian phản hồi lên tới ~1ms cũng như với
-                        tần số quét lên tới 240Hz cùng với công nghệ G-Sync của NVIDIA, nhằm thỏa mãn nhu cầu các game
-                        thủ khó tính. </p>
+                    <p> Đang cập nhật...</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -116,7 +105,7 @@
                     <thead>
                       <tr>
                         <td style="width: 40%">Thương hiệu</td>
-                        <td scope="col">{{productDetail?.tra}}</td>
+                        <td scope="col">{{productDetail?.tradeMark}}</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -162,14 +151,14 @@
             #slickModal="slick-carousel" 
             [config]="slideConfig" >
 <div ngxSlickItem *ngFor="let product of productList" class="slide">
-    <div class="box-item " [routerLink]="['/products',product.id]">
+    <div class="box-item " [routerLink]="['/products',product.id]" (click)="reload()">
         <img *ngIf ="product.imageString" src={{product.imageString}}  alt="" style="width : 100%">
         <img *ngIf ="!product.imageString" src="../../assets/images/no-image-icon-6.png" alt="" style="width : 100%">
         <div class="detail">
             <p>{{product.name}}</p>
             <span
-                style="color: red;font-weight: bold; margin-right: 10px;">{{product?.priceSale | currency : "VND"}}</span>
-            <span style="text-decoration: line-through;">{{product?.price | currency:"VND"}}</span>
+                style="color: red;font-weight: bold; margin-right: 10px;">{{product?.price | currency : "VND"}}</span>
+            <span style="text-decoration: line-through;">{{product?.priceSale | currency:"VND"}}</span>
         </div>
     </div>
 </div>

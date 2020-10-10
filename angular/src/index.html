@@ -1,19 +1,59 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>ThienAnComputer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="assets/images/logo-mobie.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body class="mat-typography">
   <app-root></app-root>
 </body>
 
 <script>
+  window.onscroll = function () { scrollFunction() };
+  function scrollFunction() {
+    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+      document.getElementById("myBtn").style.display = "block";
+      $("#fix-header").addClass("fix-header");
+      $("#fix").addClass("menu-block");
+      $("#fix").addClass("menu-req");
+      $("#li").addClass("li-mobile");
+      document.getElementById("search").style.marginTop="25px"
+      document.getElementById("img").style.display ="none";
+      document.getElementById("ul").style.display = "flex";
+      document.getElementById("cate").style.padding ="5px";
+      document.getElementById("cate").style.textTransform ="capitalize";
+      document.getElementById("cate").style.borderRadius="5px";
+      document.getElementById("cate").style.border = "1px solid #000000";
+      document.getElementById("cate").style.color ="#000000";
+      document.getElementById("cate").style.marginRight = "20px";
+      document.getElementById("fix-header").style.background ="#fff";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+      $("#fix-header").removeClass("fix-header");
+      document.getElementById("img").style.display ="block";
+      // $("#fix").remove().cssText;
+      $("#fix").removeClass("menu-block");
+      $("#fix").removeClass("menu-req");
+      $("#li").removeClass("li-mobile");
+      document.getElementById("ul").style.display = "block";
+      document.getElementById("search").style.marginTop="0";
+
+    }
+  }
+  window.onload = function(){
+    document.getElementById("myBtn").addEventListener("click", function () {
+        window.scrollTo({top:0 , behavior: 'smooth' })
+    });
+  }
 </script>
+
 </html>

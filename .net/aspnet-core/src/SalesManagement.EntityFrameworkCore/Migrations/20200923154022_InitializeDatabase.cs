@@ -1070,7 +1070,7 @@ namespace SalesManagement.Migrations
                         principalTable: "ProductConfigurations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });;
+                });
 
             migrationBuilder.CreateTable(
                 name: "AbpEntityDynamicParameterValues",

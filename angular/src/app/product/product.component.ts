@@ -10,6 +10,8 @@ export class ProductComponent implements OnInit {
   @Output() productAdded = new EventEmitter();
   constructor(private productService: ProductService) { }
   productList: ProductDto[];
+  productListSell: ProductDto[];
+
   ngOnInit(): void {
     this.getProduct();
   }
@@ -23,10 +25,16 @@ export class ProductComponent implements OnInit {
     this.productList = [];
     this.productService.getProduct().subscribe(res => {
           this.productList = res.result;
+            this.productListSell = this.productList;
           console.log(this.productList);
-          this.productList.sort((a,b)=> {
+         this.productList =  this.productList.sort((a,b)=> {
             return (new Date(a.creationTime) as any) - (new Date(b.creationTime) as any)
           });
+          this.productListSell =  this.productListSell.slice(1,7)
+         this.productListSell= this.productListSell.sort((a,b)=> {
+            return a.total - b.total;
+          })
+
     });
   }
   // tslint:disable-next-line: member-ordering
@@ -70,7 +78,7 @@ export class ProductComponent implements OnInit {
   }
 }
 export class ProductDto {
-  id : string;
+  id: string;
   name: string ;
   cpu: string;
   ram: string;
@@ -83,6 +91,7 @@ export class ProductDto {
   tradeMark: string;
   priceSale: number;
   operating: string;
+  productType: number;
   imageString: string;
   total: number;
   productCofiguration: ProductConfiguration;
