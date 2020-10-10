@@ -1,4 +1,4 @@
-<div *ngIf="!totalPrice">
+<div *ngIf="totalPrice == 0">
     <div class="container">
         <div class="row">
          
@@ -15,11 +15,10 @@
         </div>
     </div>
 </div>
-<div class="container" *ngIf="totalPrice">
+<div class="container" *ngIf="totalPrice != 0">
     <div class="row">
        <div class="col-md-12" style="padding:20px">
         <div class="col-md-4">
-            <h2>Bạn đang {{this.status}}</h2>
         <h2>Giỏ hàng của bạn({{cartItems.length}} sản phẩm)</h2>
         </div>
         <div class="col-md-4">
@@ -43,15 +42,15 @@
                     </div>
                     <div class="col-md-2">
                         <div class="buttons_added">
-                            <input class="minus is-form" type="button" value="-" (click)="remove()">
-                            <input aria-label="quantity" class="input-qty" max="40" min="0" name="" type="number" [value]="countProduct">
-                            <input class="plus is-form" type="button" value="+" (click)="add()">
+                            <!-- <input class="minus is-form" type="button" value="-" ()="remove(item)"> -->
+                            <input aria-label="quantity" class="input-qty" max="40" min="0" name="" type="number" [(ngModel)]="item.amount">
+                            <!-- <input class="plus is-form" type="button" value="+" (click)="add(item)"> -->
                           </div>
                     </div>
                     <div class="col-md-3" style="text-align: right;">
                         <div class="price">
-                            <span style="font-size: 18px;color: #3686ff; font-weight: 500;">{{ item?.priceSale | currency:'VND'}}</span>
-                            <p style="text-decoration: line-through;">{{item?.price | currency:'VND'}}</p>
+                            <span style="font-size: 16px;color:#0010b4; font-weight: bold;">{{ item?.price | currency:'VND'}}</span>
+                            <p style="text-decoration: line-through;">{{item?.priceSale | currency:'VND'}}</p>
                             
                         </div>
                     </div>
@@ -71,7 +70,7 @@
                 <tbody>
                   <tr>
                     <th scope="row">Tạm tính</th>
-                    <td>{{totalPrice |currency : 'VND'}}</td>
+                    <td>{{totalMoney() |currency : 'VND'}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Phí vận chuyển</th>
@@ -83,7 +82,7 @@
                   </tr>
                   <tr>
                     <th scope="row">Thành tiền</th>
-                    <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalPrice |currency: 'VND'}}</td>
+                    <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalMoney() |currency: 'VND'}}</td>
                   </tr>
                 </tbody>
               </table>

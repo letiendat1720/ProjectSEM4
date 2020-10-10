@@ -14,6 +14,10 @@
     font-weight: bold;
     border-bottom: 1px solid #ebebeb;
 }
+.price h2 {
+    font-weight: bold;
+    color: #0010b4;
+}
 .order {
     display: flex;
     align-items: center;
@@ -96,4 +100,7 @@
     color:#0010d4 !important;
     font-size: 40px !important;
     
+}
+.box-item {
+    cursor: pointer;
 }

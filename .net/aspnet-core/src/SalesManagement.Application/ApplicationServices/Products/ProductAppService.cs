@@ -64,13 +64,14 @@ namespace SalesManagement.ApplicationServices.Products
 
         public async Task<Product> GetById(long id) => await WorkScope.GetAll<Product>().Include(x => x.ProductConfiguration).FirstOrDefaultAsync(x => x.Id == id);
 
-        public async Task<List<Product>> GetProducts(int count = 100)
+        public async Task<List<Product>> GetProducts(int count = 10)
         {
             return await WorkScope.GetAll<Product>()
                             .OrderByDescending(x => x.CreationTime)
                             .Take(count)
                             .Include(x => x.ProductConfiguration)
                             .ToListAsync();
+
         }
     }
 }

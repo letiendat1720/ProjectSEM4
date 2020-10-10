@@ -21,8 +21,8 @@ getCpu(): Observable<any> {
 getSSD(): Observable<any> {
   return  this.http.get( this.rootUrl() + '/SolidStateDrive/GetSolidStateDrives');
 }
-getManiBroad(): Observable<any> {
-  return  this.http.get( this.rootUrl() + '/SolidStateDrive/MainBroad/GetMainBroads');
+getMainBroad(): Observable<any> {
+  return  this.http.get( this.rootUrl() + '/MainBroad/GetMainBroads');
 }
 getHDD(): Observable<any> {
   return  this.http.get( this.rootUrl() + '/HardDiskDrive/GetHardDiskDrives');

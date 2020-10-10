@@ -4,95 +4,194 @@
             <div class="card">
                 <div class="card-block">
                     <div class="row">
-                        <div class="col-md-2 item align-items-center justify-content-center" >
-                            <p>Ram</p>
+                        <div class="col-md-2 item align-items-center justify-content-center">
+                            <h4>{{titleRam}}</h4>
                         </div>
                         <div class="col-md-2">
-                            <div class="img" style="border: 1px solid #ebebeb;">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544" alt="">
-
+                            <div class="img" style="border: 1px solid #ebebeb;cursor: pointer;" data-toggle="modal"
+                                data-target="#exampleModal" (click)="openModal(titleRam,itemSelectRam)">
+                                <img *ngIf="!itemSelectRam?.imageBuildPc[0]"
+                                    src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544"
+                                    alt="">
+                                <img style="width:100%" *ngIf="itemSelectRam?.imageBuildPc[0]"
+                                    [src]="itemSelectRam?.imageBuildPc[0]" alt="">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                        
+                        <div class="col-md-3">
+                            <p>{{itemSelectRam?.name}}</p>
                         </div>
-                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+
+                        <div class="col-md-1">
+                            <!-- <div class="buttons_added">
+                                <input aria-label="quantity" class="input-qty" max="40" min="0" name="" type="number" [(ngModel)]="itemSelectRam.amount">
+                              </div> -->
+                        </div>
+                        <div class="col-md-2" style=
+                        "text-align: right;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;">
+                            <div class="price">
+                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                  {{itemSelectRam?.price | currency : "VND"}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal"
+                                data-target="#exampleModal" (click)="openModal(titleRam,itemSelectRam)">
+                                {{itemSelectRam? "Sửa" : "Chọn"}}</button></div>
+                    </div>
+                </div>
+                <span *ngIf="itemSelectRam" class="material-icons delete-item" (click)="deleteRam(itemSelectRam)">
+                    clear
+                    </span> 
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-2 item align-items-center justify-content-center">
+                            <p>Ổ {{titleSSD}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="img" style="border: 1px solid #ebebeb;" (click)="openModal(titleSSD,itemSelectSSD)">
+                                <img *ngIf="!itemSelectSSD?.imageBuildPc[0]"
+                                    src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ssd.svg?alt=media&token=e4be0398-ae2a-4735-b2aa-240c46039abe"
+                                    alt="">
+                                <img style="width:100%" *ngIf="itemSelectSSD?.imageBuildPc[0]"
+                                    [src]="itemSelectSSD?.imageBuildPc[0]" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{itemSelectSSD?.name}}</p>
+
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                        <div class="col-md-2" style=
+                        "text-align: right;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;">
+                            <div class="price">
+                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                   {{itemSelectSSD?.price | currency : "VND"}}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal"
+                                data-target="#exampleModal"
+                                (click)="openModal(titleSSD,itemSelectSSD)">{{itemSelectSSD? "Sửa" : "Chọn"}}</button></div>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-block">
                     <div class="row">
-                        <div class="col-md-2 item align-items-center justify-content-center" >
-                            <p>Ổ SSd</p>
+                        <div class="col-md-2 item align-items-center justify-content-center">
+                            <p>Ổ {{titleHDD}}</p>
                         </div>
                         <div class="col-md-2">
-                            <div class="img" style="border: 1px solid #ebebeb;">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544" alt="">
+                            <div class="img" style="border: 1px solid #ebebeb;" (click)="openModal(titleHDD,itemSelectHDD)">
+                                <img *ngIf="!itemSelectHDD?.imageBuildPc[0]"
+                                    src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ssd.svg?alt=media&token=e4be0398-ae2a-4735-b2aa-240c46039abe"
+                                    alt="">
+                                <img style="width:100%" *ngIf="itemSelectHDD?.imageBuildPc[0]"
+                                    [src]="itemSelectHDD?.imageBuildPc[0]" alt="">
+                            </div>
 
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{itemSelectHDD?.name}}</p>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2" style=
+                        "text-align: right;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;">
+                            <div class="price">
+                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                   {{itemSelectHDD?.price | currency : "VND"}}</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                        
-                        </div>
-                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal"
+                                data-target="#exampleModal"
+                                (click)="openModal(titleHDD,itemSelectHDD)">{{itemSelectHDD? "Sửa" : "Chọn"}}</button></div>
                     </div>
                 </div>
             </div>
-            <div class="card">
+           <!-- <div class="card">
                 <div class="card-block">
                     <div class="row">
-                        <div class="col-md-2 item align-items-center justify-content-center" >
-                            <p>Ổ HHD</p>
+                        <div class="col-md-2 item align-items-center justify-content-center">
+                            <p>Ổ {{titleHDD}}   </p>
                         </div>
                         <div class="col-md-2">
-                            <div class="img" style="border: 1px solid #ebebeb;">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ssd.svg?alt=media&token=e4be0398-ae2a-4735-b2aa-240c46039abe" alt="">
+                            <div class="img" style="border: 1px solid #ebebeb;" (click)="openModal(titleHDD,itemSelectHDD)">
+                                <img *ngIf="!itemSelectHDD?.imageBuildPc[0]"
+                                    src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/hdd.svg?alt=media&token=05efe4a2-d30e-4f2f-8493-f61eea388840"
+                                    alt="">
+                                <img style="width:100%" *ngIf="itemSelectHDD?.imageBuildPc[0]"
+                                    [src]="itemSelectHDD?.imageBuildPc[0]" alt="">
+                            </div>
 
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{itemSelectHDD?.name}}</p>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2" style=
+                        "text-align: right;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;">
+                            <div class="price">
+                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                   {{itemSelectHDD?.price | currency : "VND"}}</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                        
-                        </div>
-                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal"
+                                data-target="#exampleModal"
+                                (click)="openModal(titleHDD, itemSelectHDD)">{{itemSelectHDD? "Sửa" : "Chọn"}}</button></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="card">
                 <div class="card-block">
                     <div class="row">
-                        <div class="col-md-2 item align-items-center justify-content-center" >
-                            <p>Card Màn hình</p>
+                        <div class="col-md-2 item align-items-center justify-content-center">
+                            <p>{{titleMainBroad}}</p>
                         </div>
                         <div class="col-md-2">
-                            <div class="img" style="border: 1px solid #ebebeb;">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/ram.svg?alt=media&token=2ed78d9a-5622-4be9-9ef7-e7c53e3ac544" alt="">
+                            <div class="img" style="border: 1px solid #ebebeb;" (click)="openModal(titleMainBroad,itemSelectMainBroad)">
+                                <img *ngIf="!itemSelectMainBroad?.imageBuildPc[0]"
+                                    src="http://static.360buyimg.com/master-of-loader/pc/img/mother-board-icon.82595f5e.svg"
+                                    alt="">
+                                <img style="width:100%" *ngIf="itemSelectMainBroad?.imageBuildPc[0]"
+                                    [src]="itemSelectMainBroad?.imageBuildPc[0]" alt="">
+                            </div>
 
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{itemSelectMainBroad?.name}}</p>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-2" style=
+                        "text-align: right;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;">
+                            <div class="price">
+                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                   {{itemSelectMainBroad?.price | currency : "VND"}}</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                        
-                        </div>
-                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal" data-target="#exampleModal">chọn</button></div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-md-2  item align-items-center justify-content-center" >
-                            <p>VGA</p>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="img" style="border: 1px solid #ebebeb;">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/mongcaifood.appspot.com/o/vga-card.svg?alt=media&token=9f112617-13ac-4016-aa3b-6f03d53a9f9a" alt="">
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                        
-                        </div>
-                        <div class="col-md-2 click"><button class="btn btn-success click" >chọn</button></div>
+                        <div class="col-md-2 click"><button class="btn btn-success " data-toggle="modal"
+                                data-target="#exampleModal"
+                                (click)="openModal(titleMainBroad, itemSelectMainBroad)">{{itemSelectMainBroad? "Sửa" : "Chọn"}}</button></div>
                     </div>
                 </div>
             </div>
@@ -101,72 +200,173 @@
             <div class="thanh-toan">
                 <h2>Thanh toán</h2>
                 <table class="table">
-                   
                     <tbody>
-                      <tr>
-                        <th scope="row">Tạm tính</th>
-                        <td>{{totalPrice |currency : 'VND'}}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Phí vận chuyển</th>
-                        <td>{{0 | currency:'VND'}}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Khuyến mại</th>
-                        <td>{{0 | currency:'VND' }}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Thành tiền</th>
-                        <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalPrice |currency: 'VND'}}</td>
-                      </tr>
+                        <tr>
+                            <th scope="row">Tạm tính</th>
+                            <td>{{totalPrice |currency : 'VND'}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Phí vận chuyển</th>
+                            <td>{{0 | currency:'VND'}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Khuyến mại</th>
+                            <td>{{0 | currency:'VND' }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Thành tiền</th>
+                            <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">
+                                {{totalPrice |currency: 'VND'}}</td>
+                        </tr>
                     </tbody>
-                  </table>
-                  <div class="btn-thanh-toan_cart">
-                      <button class="btn btn-success">Thanh toán</button>
-                  </div>
+                </table>
+                <div class="btn-thanh-toan_cart">
+                    <button class="btn btn-success">Thanh toán</button>
                 </div>
-    
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Danh sách</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
-            <div class="modal-body">
-                <div class="list-product-cart">
-                    <div class="item-cart" *ngFor="let item of Ram">
-                      <div class="row">
-                         <div class="col-md-2">
-                             <div class="box-image" style="width: 100%;">
-                                 <!-- <img style="width: 100%;" [src]="item.imageString" alt=""> -->
-                             </div>          
-                         </div>
-                         <div class="col-md-5">
-                             <div class="des">
-                                 <p>{{item.name}}</p>
-                                       
-                             </div>
-                         </div>
-                         <div class="col-md-3" style="text-align: right;">
-                            <div class="price">
-                                <span style="font-size: 18px;color: #3686ff; font-weight: 500;">{{ item?.priceSale | currency:'VND'}}</span>
-                                <p style="text-decoration: line-through;">{{item?.price | currency:'VND'}}</p>
-                                
+
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-size: 24px;" id="exampleModalLabel">Danh sách</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-product-cart">
+                            <div *ngIf="dataModal =='Ram'">
+                                <div class="item-cart" *ngFor="let item of ram">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="box-image" style="width: 100%;">
+                                                <img style="width: 100%;" [src]="item?.imageBuildPc[0]" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="des">
+                                                <p >{{item.name}}</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 " style=
+                                        "text-align: right;
+                                        align-items: center;
+                                        justify-content: center;
+                                        display: flex;">
+                                            <div class="price">
+                                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                                    {{ item?.price | currency:'VND'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 " style="top: 30px"><button class="btn btn-success"
+                                                data-dismiss="modal" aria-label="Close"
+                                                (click)="addRam(item)" style="background: #0010d4;">Chọn</button></div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dataModal =='SSD'">
+                                <div class="item-cart" *ngFor="let item of ssd">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="box-image" style="width: 100%;">
+                                                <img style="width: 100%;" [src]="item?.imageBuildPc[0]" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="des">
+                                                <p >{{item.name}}</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 " style=
+                                        "text-align: right;
+                                        align-items: center;
+                                        justify-content: center;
+                                        display: flex;">
+                                            <div class="price">
+                                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                                    {{ item?.price | currency:'VND'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 " style="top: 30px"><button class="btn btn-success"
+                                                data-dismiss="modal" aria-label="Close"
+                                                (click)="addSSD(item)" style="background: #0010d4;">Chọn</button></div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dataModal =='HDD'">
+                                <div class="item-cart" *ngFor="let item of hdd">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="box-image" style="width: 100%;">
+                                                <img style="width: 100%;" [src]="item?.imageBuildPc[0]" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="des">
+                                                <p >{{item.name}}</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 " style=
+                                        "text-align: right;
+                                        align-items: center;
+                                        justify-content: center;
+                                        display: flex;">
+                                            <div class="price">
+                                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                                    {{ item?.price | currency:'VND'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 " style="top: 30px"><button class="btn btn-success"
+                                                data-dismiss="modal" aria-label="Close"
+                                                (click)="addHDD(item)" style="background: #0010d4;">Chọn</button></div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dataModal =='Main'">
+                                <div class="item-cart" *ngFor="let item of mainBroad">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="box-image" style="width: 100%;">
+                                                <img style="width: 100%;" [src]="item?.imageBuildPc[0]" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="des">
+                                                <p >{{item.name}}</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 " style=
+                                        "text-align: right;
+                                        align-items: center;
+                                        justify-content: center;
+                                        display: flex;">
+                                            <div class="price">
+                                                <p style="font-size: 16px;color:#0010d4; font-weight:bold;">
+                                                    {{ item?.price | currency:'VND'}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 " style="top: 30px"><button class="btn btn-success"
+                                                data-dismiss="modal" aria-label="Close"
+                                                (click)="addMainBroad(item)" style="background: #0010d4;">Chọn</button></div>
+
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-2"><button class="btn btn-success ">chọn</button></div>
-                    
-                
-                     </div>
-                    </div>             
-                 </div>
+                    </div>
+
+                </div>
             </div>
-          
-          </div>
         </div>
-      </div>
-</div>
+    </div>

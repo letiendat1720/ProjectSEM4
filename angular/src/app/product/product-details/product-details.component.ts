@@ -15,8 +15,10 @@ export class ProductDetailsComponent implements OnInit {
     private productService: ProductService,
     public cartService: CartService,
   ) { }
-    productDetail ;
+    productDetail;
     productList: ProductDto[];
+    productListAll: ProductDto[];
+
   slides = [
     {img: 'https://hanoicomputercdn.com/media/news/19_0828_banner_pcgm_tintuc.png'},
     {img: "https://genk.mediacdn.vn/2019/11/27/msibanner2019-1574849555204926741509.jpg"},
@@ -40,17 +42,23 @@ export class ProductDetailsComponent implements OnInit {
   }
   // tslint:disable-next-line: typedef
   getProductDetail(id: any) {
-    this.productList = []
+    this.productList = [];
+    this.productDetail =[];
+    this.productListAll = [];
     this.productService.getProductID(id).subscribe(data => {
      this.productDetail = data.result;
+     this.productListAll = data.result;
      this.productService.getProduct().subscribe(res => {
       this.productList = res.result;
+      this.productListAll = this.productList.filter(item => item.productType == this.productDetail.productType)
       this.productList = this.productList.filter(item => item.tradeMark == this.productDetail.tradeMark)
     // tslint:disable-next-line: align
     // tslint:disable-next-line: max-line-length
     });
-     console.log(this.productDetail);
+    
     });
   }
-
+  reload() {
+    setTimeout(function(){location.reload()}, 500);
+  }
 }

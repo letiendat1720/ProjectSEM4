@@ -127,7 +127,7 @@ body{
 }
 .card .card-block,
 .card .card-body {
-  padding: 30px 25px;
+ padding: 20px;
 }
 .card.card-load {
   position: relative;
@@ -173,7 +173,7 @@ h6 {
 }
 .thanh-toan {
     padding: 10px ;
-    background: #ebebeb;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
     border-radius: 5px;
   }
   .btn-thanh-toan_cart {
@@ -181,7 +181,7 @@ h6 {
   }
   .btn-thanh-toan_cart button{
     width: 100%;
-    background:#3686ff;
+    background:#0010d4;
     padding: 5px;
     font-size: 18px;
   }
@@ -485,8 +485,7 @@ h6 {
 } .item-cart {
   padding: 20px;
   border-radius: 5px;
-  background: #ebebee;
-  margin-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
 }
 .table tbody tr th {
   border: none;
@@ -506,6 +505,39 @@ h6 {
     /* align-items: center; */
     display: flex;
 }
+.card-block p {
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
 .click {
     top: 30px !important;
+}
+.click button {
+  background: #0010d4;
+  
+}
+.des p {
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.modal-dialog{
+  min-width: 800px;
+}
+.delete-item {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 1px;
+  border-radius: 50%;
+  background: #3686ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.delete-item:hover {
+  padding: 2px;
 }
