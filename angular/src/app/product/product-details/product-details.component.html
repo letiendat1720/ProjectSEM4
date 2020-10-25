@@ -12,22 +12,22 @@
                         <h2>{{productDetail?.name}}</h2>
                     </div>
                     <div class="price">
-                        <h2 >{{productDetail?.priceSale | currency: "VND"}}</h2>
+                        <h2 >{{productDetail?.price | currency: 'CLP' :' '}} đ</h2>
                     </div>
                     <div class="khuyen-mai">
                         <h2>Chọn thêm 1 trong những khuyến mãi sau</h2>
                         <div class="box-khuyen-mai">
                             <p style="color: red;font-weight: bold;">Giá :
-                                {{productDetail?.price | currency: "VND"}}</p>
+                                {{productDetail?.price | currency: 'CLP' :' '}} đ</p>
                             <p>Đã tiết kiệm : <span
-                                    style="color: red;">{{productDetail?.price - productDetail?.priceSale| currency: "VND"}}</span>
+                                    style="color: red;">{{productDetail?.priceSale - productDetail?.price| currency: 'CLP':' '}} đ</span>
                             </p>
                         </div>
                     </div>
                     <div class="buy-add">
                         <button class="btn btn-success" routerLink="/cart"
                             (click)="cartService.addItem(productDetail)">Mua ngay</button>
-                        <button class="btn btn-warning" (click)="cartService.addItem(productDetail)">Thêm vào giỏ
+                        <button class="btn btn-warning" data-toggle="modal" data-target ="#addItem"  (click)="cartService.addItem(productDetail)">Thêm vào giỏ
                             hàng</button>
                     </div>
                 </div>
@@ -84,8 +84,8 @@
         <div class="detail">
             <p>{{product.name}}</p>
             <span
-                style="color: red;font-weight: bold; margin-right: 10px;">{{product?.priceSale | currency : "VND"}}</span>
-            <span style="text-decoration: line-through;">{{product?.price | currency:"VND"}}</span>
+                style="color: red;font-weight: bold; margin-right: 10px;">{{product?.price | currency : "CLP" : " "}} đ</span>
+            <span style="text-decoration: line-through;">{{product?.priceSale | currency:"CLP" : " "}} đ</span>
         </div>
     </div>
 </div>
@@ -157,14 +157,22 @@
         <div class="detail">
             <p>{{product.name}}</p>
             <span
-                style="color: red;font-weight: bold; margin-right: 10px;">{{product?.price | currency : "VND"}}</span>
-            <span style="text-decoration: line-through;">{{product?.priceSale | currency:"VND"}}</span>
+                style="color: red;font-weight: bold; margin-right: 10px;">{{product?.priceSale | currency : "CLP" : ""}} đ</span>
+            <span style="text-decoration: line-through;">{{product?.price | currency:"CLP" : ""}} đ</span>
         </div>
     </div>
 </div>
 </ngx-slick-carousel>
-
+<div class="modal fade" id="addItem" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Thêm vào giỏ hàng thành công</p>
         </div>
-     <a routerLink="/buildPc">Build Pc</a>
+      </div>
+      
     </div>
+  </div>
 </div>

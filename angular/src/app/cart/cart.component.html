@@ -1,4 +1,4 @@
-<div *ngIf="totalPrice == 0">
+<div *ngIf="this.cartService.count == 0">
     <div class="container">
         <div class="row">
          
@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<div class="container" *ngIf="totalPrice != 0">
+<div class="container" *ngIf="this.cartService.count != 0">
     <div class="row">
        <div class="col-md-12" style="padding:20px">
         <div class="col-md-4">
@@ -49,8 +49,8 @@
                     </div>
                     <div class="col-md-3" style="text-align: right;">
                         <div class="price">
-                            <span style="font-size: 16px;color:#0010b4; font-weight: bold;">{{ item?.price | currency:'VND'}}</span>
-                            <p style="text-decoration: line-through;">{{item?.priceSale | currency:'VND'}}</p>
+                            <span style="font-size: 16px;color:#0010b4; font-weight: bold;">{{ item?.price | currency : 'CLP':''}} đ</span>
+                            <p style="text-decoration: line-through;">{{item?.priceSale | currency : 'CLP':''}} đ</p>
                             
                         </div>
                     </div>
@@ -70,19 +70,19 @@
                 <tbody>
                   <tr>
                     <th scope="row">Tạm tính</th>
-                    <td>{{totalMoney() |currency : 'VND'}}</td>
+                    <td>{{totalMoney() |currency : 'CLP':''}} đ</td>
                   </tr>
                   <tr>
                     <th scope="row">Phí vận chuyển</th>
-                    <td>{{0 | currency:'VND'}}</td>
+                    <td>{{0 | currency : 'CLP':''}} đ</td>
                   </tr>
                   <tr>
                     <th scope="row">Khuyến mại</th>
-                    <td>{{0 | currency:'VND' }}</td>
+                    <td>{{0 | currency : 'CLP':'' }} đ</td>
                   </tr>
                   <tr>
                     <th scope="row">Thành tiền</th>
-                    <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalMoney() |currency: 'VND'}}</td>
+                    <td style="color: rgb(235, 33, 1); font-weight: 700; text-align: right;font-size: 18px;">{{totalMoney() |currency: 'CLP' : ''}} đ</td>
                   </tr>
                 </tbody>
               </table>
