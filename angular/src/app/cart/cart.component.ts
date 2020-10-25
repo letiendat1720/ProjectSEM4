@@ -36,13 +36,15 @@ export class CartComponent implements OnInit {
       const dataRemove = this.cartItems.filter(data => data.id === item.id);
       console.log(dataRemove);
       const countProduct = localStorage.getItem('dataCount');
-      if(!countProduct) {
+      if (!countProduct) {
           localStorage.clear();
       }
       // tslint:disable-next-line: radix
-      if(dataRemove != null) {
-      const productCurrent = parseInt(countProduct) - dataRemove.amount;
+      if (dataRemove != null) {
+      // tslint:disable-next-line: radix
+      const productCurrent = parseInt(countProduct) - dataRemove[0].amount;
       localStorage.setItem('dataCount', JSON.stringify(productCurrent));
+     
       }
       this.cartItems = data;
       localStorage.setItem('listItemAddToCart', JSON.stringify(this.cartItems));

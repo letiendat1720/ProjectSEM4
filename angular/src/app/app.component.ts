@@ -15,12 +15,12 @@ export class AppComponent implements OnInit{
 constructor(private connectService : ConnectionService) {
   this.connectService.monitor().subscribe(isConnected => {
     this.isConnected = isConnected;
-    if(this.isConnected) {
-      window.alert("ThienAn thông báo : bạn đang ONLINE")
+    if (this.isConnected) {
+      window.alert('ThienAn thông báo : bạn đang ONLINE')
     } else {
-      window.alert("ThienAn thông báo : bạn đang OFFLINE")
+      window.alert('ThienAn thông báo : bạn đang OFFLINE')
     }
-  })
+  });
 }
 }
 

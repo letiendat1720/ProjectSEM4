@@ -33,14 +33,12 @@ export class ProductDetailsComponent implements OnInit {
 }
 }
   ngOnInit(): void {
-    // this.getProductByTrademark();
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = param;
       this.getProductDetail(id);
     }
   }
-  // tslint:disable-next-line: typedef
   getProductDetail(id: any) {
     this.productList = [];
     this.productDetail =[];

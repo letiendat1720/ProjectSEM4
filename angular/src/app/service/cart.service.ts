@@ -16,10 +16,9 @@ export class CartService {
 
   // tslint:disable-next-line: typedef
   addItem(data) {
-   
     this.listItemAddToCart = JSON.parse(localStorage.getItem('listItemAddToCart'));
     if (this.listItemAddToCart) {
-      this.item = this.listItemAddToCart.find(res => res.name === data.name)
+      this.item = this.listItemAddToCart.find(res => res.name === data.name);
     } else {
       this.listItemAddToCart = [];
     }
